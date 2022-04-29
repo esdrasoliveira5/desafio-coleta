@@ -8,6 +8,9 @@ class Service implements ServiceInterface {
 
   create = async (obj: FormType): Promise<ResponseError | ResponseFormResult> => {
     const response = await this.model.create(obj);
+    if (response === null) {
+      return { status: 500, response: { error: 'Internal Server Error'}}
+    }
     return { status: 200, response };
   }
 }
