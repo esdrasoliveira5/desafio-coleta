@@ -1,4 +1,4 @@
-import { FormResultType, FormType } from "../types/FormType";
+import { FormType } from "../types/FormType";
 import { ResponseError, ResponseFormResult } from "./ResponsesInterface";
 
 export interface ServiceInterface {
