@@ -1,4 +1,4 @@
-import { FormResultType } from "../types/FormType";
+import { FormResultType } from '../types/FormType';
 
 export interface Status {
   status: number;

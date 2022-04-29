@@ -1,29 +1,31 @@
-import { FormType } from "../types/FormType";
+import { FormType } from '../types/FormType';
 
 class Validation {
-
   yesOrNo = (resposta: string) => {
     if (resposta === 'Sim' || resposta === 'Não') {
-      return true
+      return true;
     }
-  }
+  };
 
   nowOrMaybe = (resposta: string) => {
     if (resposta === 'Sim' || resposta === 'Não') {
-      return true
+      return true;
     }
     
     if (resposta === 'Não Sei' || resposta === 'Agora') {
-      return true
+      return true;
     }
-  }
+  };
 
   textBox = (resposta: string) => {
-    if( typeof (resposta) !== 'string' || resposta.length < 15 || resposta.length > 200) {
-      return false
+    if (typeof (resposta) !== 'string'
+    || resposta.length < 15 
+    || resposta.length > 200
+    ) {
+      return false;
     }
-    return true
-  }
+    return true;
+  };
 
   form = (data: FormType) => {
     const { pergunta1, pergunta2, pergunta3, pergunta4 } = data;
@@ -31,7 +33,7 @@ class Validation {
     if (!this.yesOrNo(pergunta2)) return false;
     if (!this.nowOrMaybe(pergunta3)) return false;
     if (!this.textBox(pergunta4)) return false;
-  }
-};
+  };
+}
 
 export default Validation;

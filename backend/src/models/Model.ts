@@ -1,9 +1,8 @@
-import { ModelInterface } from "../interface/ModelInterface";
 import fs from 'fs';
 import * as path from 'path';
+import { ModelInterface } from '../interface/ModelInterface';
 
-import { FormResultType, FormType } from "../types/FormType";
-
+import { FormResultType, FormType } from '../types/FormType';
 
 class Model implements ModelInterface {
   create = async (obj: FormType): Promise<FormResultType | null> => {
@@ -11,14 +10,18 @@ class Model implements ModelInterface {
       const newJSON = JSON.stringify(obj);
       fs.writeFileSync(path.resolve('./src/db/formsData.json'), newJSON);
       
-      const rawdata = fs.readFileSync(path.resolve('./src/db/formsData.json'), 'utf8');
+      const rawdata = fs.readFileSync(
+        path.resolve('./src/db/formsData.json'),
+        'utf8',
+      );
+      
       const data = JSON.parse(rawdata);
       return data as FormResultType;
     } catch (error) {
       console.log(error);
-      return null
+      return null;
     }
-  }
-};
+  };
+}
 
 export default Model;
