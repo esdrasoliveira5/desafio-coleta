@@ -4,7 +4,7 @@ import { HeaderStyled } from '../styles/Forms';
 function Header() {
   return (
     <HeaderStyled>
-      HEADER
+      GRX
     </HeaderStyled>
   );
 }

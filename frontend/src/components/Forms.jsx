@@ -55,7 +55,7 @@ function Forms() {
     <FormStyled>
       <h1>Desafio Coleta - GRX</h1>
       <ButtonStyled>
-        <h3>1 - Voce se considera bom em logica?</h3>
+        <h3>1 - Você se considera bom em logica?</h3>
         <div className="button">
           <input
             type="radio"
@@ -105,7 +105,7 @@ function Forms() {
         </div>
       </ButtonStyled>
       <div>
-        <h3>3 - Gostria de fazer parte da GRX?</h3>
+        <h3>3 - Gostaria de fazer parte da GRX?</h3>
         <div>
           <select
             name="pergunta3"

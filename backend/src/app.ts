@@ -1,4 +1,5 @@
 import express from 'express';
+import Cors from 'cors';
 import Controller from './controllers/controller';
 
 require('express-async-errors');

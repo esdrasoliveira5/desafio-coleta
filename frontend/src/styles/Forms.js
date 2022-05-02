@@ -8,7 +8,7 @@ export const BodyStyled = styled.div`
   position: relative;
   min-height: 100vh;
   background-color: #FFB703;
-  `;
+`;
 
 export const HeaderStyled = styled.header`
   font-size: 15px;
@@ -21,7 +21,8 @@ export const HeaderStyled = styled.header`
   width: 100%;
   z-index: 10;
   background-color: #FB8500;
-  color: #577590;
+  color: white;
+  font-size: 30px;
 `;
 
 export const FooterStyled = styled.footer`
