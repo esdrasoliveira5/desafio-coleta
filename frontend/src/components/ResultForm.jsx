@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 // {
@@ -56,5 +57,12 @@ function ResultForm({
     </div>
   );
 }
+
+ResultForm.propTypes = {
+  quantidadeNaoAvaliada: PropTypes.number.isRequired,
+  quantidadeNegativa: PropTypes.number.isRequired,
+  quantidadePositiva: PropTypes.number.isRequired,
+  total: PropTypes.PropTypes.number.isRequired,
+};
 
 export default ResultForm;
