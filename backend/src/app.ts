@@ -10,6 +10,7 @@ class App {
 
   constructor() {
     this.app = express();
+    this.app.use(Cors());
     this.app.use(express.json());
     this.app.post('/form', this.controller.create);
   }
