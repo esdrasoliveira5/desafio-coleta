@@ -17,6 +17,7 @@ class Service implements ServiceInterface {
     if (!this.validation.form(obj)) {
       return { status: 400, response: { error: 'Bad Request' } };
     }
+
     const response = await this.model.create(obj);
     if (response === null) {
       return { status: 500, response: { error: 'Internal Server Error' } };
