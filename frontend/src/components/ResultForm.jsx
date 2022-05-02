@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import desafioColetaContext from '../context/AppContext';
+import { ResultFormStyled } from '../styles/Forms';
 
 function ResultForm() {
   const { result } = useContext(desafioColetaContext);
@@ -14,10 +15,12 @@ function ResultForm() {
     total,
   } = result;
   return (
-    <div>
+    <ResultFormStyled>
       <div>
-        <h3>Total</h3>
-        <p>{total}</p>
+        <div>
+          <h3>Total</h3>
+          <p>{total}</p>
+        </div>
       </div>
       <div>
         <div>
@@ -49,7 +52,7 @@ function ResultForm() {
           <p>{((quantidadeNaoAvaliada * 100) / total).toFixed(2)}</p>
         </div>
       </div>
-    </div>
+    </ResultFormStyled>
   );
 }
 

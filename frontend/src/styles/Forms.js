@@ -197,3 +197,35 @@ export const ButtonGreen = styled.div`
     background-color: #00a896;
   }
 `;
+
+export const ResultFormStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8961E;
+  padding: 15px;
+  color: #FFFFFF;
+  min-width: 300px;
+  width: 100%;
+
+  @media screen and (min-width: 700px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1100px) {
+    width: 50%;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+`;

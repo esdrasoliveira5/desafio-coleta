@@ -94,8 +94,8 @@ function Forms() {
             onChange={(event) => handleForm(event)}
           >
             <option value="Sim">Sim</option>
-            <option value="Não">Nao</option>
-            <option value="Não Sei">Nao Sei</option>
+            <option value="Não">Não</option>
+            <option value="Não Sei">Não Sei</option>
             <option value="Agora!!">Agora!!</option>
           </select>
         </div>
