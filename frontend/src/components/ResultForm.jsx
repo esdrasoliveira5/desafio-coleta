@@ -1,23 +1,14 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useContext } from 'react';
+import desafioColetaContext from '../context/AppContext';
 
-// {
-//   "pergunta1": "Sim",
-//   "pergunta2": "Não",
-//   "pergunta3": "Não Sei",
-//   "pergunta4": "Ola eu sou uma banana11111111",
-//   "quantidadePositiva": 7,
-//   "quantidadeNegativa": 17,
-//   "quantidadeNaoAvaliada": 21,
-//   "total": 45
-// }
-
-function ResultForm({
-  quantidadePositiva,
-  quantidadeNegativa,
-  quantidadeNaoAvaliada,
-  total,
-}) {
+function ResultForm() {
+  const { result } = useContext(desafioColetaContext);
+  const {
+    quantidadePositiva,
+    quantidadeNegativa,
+    quantidadeNaoAvaliada,
+    total,
+  } = result;
   return (
     <div>
       <div>
@@ -31,7 +22,7 @@ function ResultForm({
         </div>
         <div>
           <h3>% Positiva</h3>
-          <p>{(quantidadePositiva * 100) / total }</p>
+          <p>{((quantidadePositiva * 100) / total).toFixed(2)}</p>
         </div>
       </div>
       <div>
@@ -41,7 +32,7 @@ function ResultForm({
         </div>
         <div>
           <h3>% Negativa</h3>
-          <p>{(quantidadeNegativa * 100) / total }</p>
+          <p>{((quantidadeNegativa * 100) / total).toFixed(2)}</p>
         </div>
       </div>
       <div>
@@ -51,18 +42,11 @@ function ResultForm({
         </div>
         <div>
           <h3>% Nao Avaliada</h3>
-          <p>{(quantidadeNaoAvaliada * 100) / total }</p>
+          <p>{((quantidadeNaoAvaliada * 100) / total).toFixed(2)}</p>
         </div>
       </div>
     </div>
   );
 }
-
-ResultForm.propTypes = {
-  quantidadeNaoAvaliada: PropTypes.number.isRequired,
-  quantidadeNegativa: PropTypes.number.isRequired,
-  quantidadePositiva: PropTypes.number.isRequired,
-  total: PropTypes.PropTypes.number.isRequired,
-};
 
 export default ResultForm;

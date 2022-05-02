@@ -4,15 +4,18 @@ import Forms from './components/Forms';
 import Header from './components/Header';
 import ResultForm from './components/ResultForm';
 import { BodyStyled } from './styles/Forms';
+import Provider from './context/DesafioColetaProvider';
 
 function App() {
   return (
-    <BodyStyled>
-      <Header />
-      <Forms />
-      <ResultForm />
-      <Footer />
-    </BodyStyled>
+    <Provider>
+      <BodyStyled>
+        <Header />
+        <Forms />
+        <ResultForm />
+        <Footer />
+      </BodyStyled>
+    </Provider>
   );
 }
 
