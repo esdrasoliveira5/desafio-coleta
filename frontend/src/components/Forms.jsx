@@ -33,7 +33,22 @@ function Forms() {
     const response = await sendForm(form);
     if (!response.error) {
       setResult(response);
+      setForm({
+        pergunta1: '',
+        pergunta2: '',
+        pergunta3: 'Sim',
+        pergunta4: '',
+      });
     }
+  };
+
+  const handleCancel = () => {
+    setForm({
+      pergunta1: '',
+      pergunta2: '',
+      pergunta3: 'Sim',
+      pergunta4: '',
+    });
   };
 
   return (
@@ -47,6 +62,7 @@ function Forms() {
             id="yes"
             name="pergunta1"
             value="Sim"
+            checked={form.pergunta1 === 'Sim'}
             onChange={(event) => handleForm(event)}
           />
           <label htmlFor="yes">Sim</label>
@@ -57,6 +73,7 @@ function Forms() {
             id="no"
             value="Não"
             name="pergunta1"
+            checked={form.pergunta1 === 'Não'}
             onChange={(event) => handleForm(event)}
           />
           <label htmlFor="no">Não</label>
@@ -70,6 +87,7 @@ function Forms() {
             id="answer2-yes"
             name="pergunta2"
             value="Sim"
+            checked={form.pergunta2 === 'Sim'}
             onChange={(event) => handleForm(event)}
           />
           <label htmlFor="answer2-yes">Sim</label>
@@ -80,6 +98,7 @@ function Forms() {
             id="answer2-no"
             name="pergunta2"
             value="Não"
+            checked={form.pergunta2 === 'Não'}
             onChange={(event) => handleForm(event)}
           />
           <label htmlFor="answer2-no">Não</label>
@@ -120,6 +139,7 @@ function Forms() {
         <ButtonRed>
           <button
             type="button"
+            onClick={handleCancel}
           >
             Cancelar
           </button>
