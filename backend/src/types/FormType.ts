@@ -9,6 +9,7 @@ export type ResultType = {
   quantidadePositiva: number,
   quantidadeNegativa: number,
   quantidadeNaoAvaliada: number,
+  total: number;
 };
 
 export type FormResultType = FormType & ResultType;
