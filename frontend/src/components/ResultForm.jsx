@@ -44,11 +44,11 @@ function ResultForm() {
       </div>
       <div>
         <div>
-          <h3>Quantidade Nao Avaliada</h3>
+          <h3>Quantidade Não Avaliada</h3>
           <p>{quantidadeNaoAvaliada}</p>
         </div>
         <div>
-          <h3>% Nao Avaliada</h3>
+          <h3>% Não Avaliada</h3>
           <p>{((quantidadeNaoAvaliada * 100) / total).toFixed(2)}</p>
         </div>
       </div>

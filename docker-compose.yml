@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  frontend:
+    build: ./frontend
+    container_name: bfm_frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+  backend:
+    build: ./backend
+    container_name: bfm_backend
+    ports:
+      - 3001:3001

@@ -10,20 +10,29 @@ import {
 } from '../styles/Forms';
 
 function Forms() {
-  const { setResult } = useContext(desafioColetaContext);
+  const { result, setResult } = useContext(desafioColetaContext);
   const [form, setForm] = useState({
     pergunta1: '',
     pergunta2: '',
     pergunta3: 'Sim',
     pergunta4: '',
+    counter: 0,
   });
 
   const handleForm = ({ target }) => {
     const { name, value } = target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    if (name === 'pergunta4') {
+      setForm({
+        ...form,
+        [name]: value,
+        counter: value.length,
+      });
+    } else {
+      setForm({
+        ...form,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async () => {
@@ -32,6 +41,7 @@ function Forms() {
     }
     const response = await sendForm(form);
     if (!response.error) {
+      global.alert('Obrigado pela Resposta!');
       setResult(response);
       setForm({
         pergunta1: '',
@@ -43,12 +53,16 @@ function Forms() {
   };
 
   const handleCancel = () => {
-    setForm({
-      pergunta1: '',
-      pergunta2: '',
-      pergunta3: 'Sim',
-      pergunta4: '',
-    });
+    const response = global.confirm('Tem certeza?');
+    if (response === true) {
+      setForm({
+        pergunta1: '',
+        pergunta2: '',
+        pergunta3: 'Sim',
+        pergunta4: '',
+      });
+      setResult(false);
+    }
   };
 
   return (
@@ -126,24 +140,46 @@ function Forms() {
             name="pergunta4"
             value={form.pergunta4}
             onChange={(event) => handleForm(event)}
+            maxLength="200"
           />
+          <span>{`${form.counter ? form.counter : 0}/200`}</span>
         </div>
-        <ButtonGreen>
-          <button
-            type="button"
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
-        </ButtonGreen>
-        <ButtonRed>
-          <button
-            type="button"
-            onClick={handleCancel}
-          >
-            Cancelar
-          </button>
-        </ButtonRed>
+        {
+          result !== false
+            ? (
+              <div>
+                <ButtonRed>
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                  >
+                    Responder de novo
+                  </button>
+                </ButtonRed>
+              </div>
+            )
+            : (
+              <div>
+                <ButtonGreen>
+                  <button
+                    type="button"
+                    onClick={handleSubmit}
+                  >
+                    Enviar
+                  </button>
+                </ButtonGreen>
+                <ButtonRed>
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                  >
+                    Limpar Campos
+                  </button>
+                </ButtonRed>
+              </div>
+            )
+        }
+
       </div>
     </FormStyled>
   );

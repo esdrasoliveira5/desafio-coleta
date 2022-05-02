@@ -7,7 +7,7 @@ export const BodyStyled = styled.div`
   align-items: center;
   position: relative;
   min-height: 100vh;
-  background-color: #FFB703;
+  background-color: #f2f2f2;
 `;
 
 export const HeaderStyled = styled.header`
@@ -20,15 +20,18 @@ export const HeaderStyled = styled.header`
   top: 0;
   width: 100%;
   z-index: 10;
-  background-color: #FB8500;
+  background-color: #1a1b29;
   color: white;
   font-size: 30px;
+  img {
+    width: 150px;
+  }
 `;
 
 export const FooterStyled = styled.footer`
-  background-color: #219EBC;
+  background-color: rgb(0 0 0);
   padding: 20px;
-  color: #023047;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +49,9 @@ export const FooterStyled = styled.footer`
     text-decoration: none;
     img {
       width: 30px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      margin: 1px;
     }
   }
   }
@@ -54,11 +60,16 @@ export const FooterStyled = styled.footer`
 export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  background-color: #F8961E;
+  background-color: rgba(29, 29, 27, 0.9);
   padding: 15px;
-  color: #FFFFFF;
+  color: #fff;
   min-width: 300px;
   width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  h1 {
+    color: #338cfd;
+  }
   input {
     outline: 0;
     background: #f2f2f2;
@@ -146,8 +157,9 @@ export const ButtonStyled = styled.div`
 }
 
 .button input[type="radio"]:checked + label {
-  background: #02c39a;
+  background: #4295ffd6;
   border-radius: 4px;
+  color: white;
 }
 
 .button label {
@@ -183,7 +195,7 @@ export const ButtonGreen = styled.div`
     margin-top: 10px;
     text-transform: uppercase;
     outline: 0;
-    background: #02c39a;
+    background: #337ab7;
     width: 100%;
     border: 0;
     border-radius: 5px;
@@ -195,7 +207,7 @@ export const ButtonGreen = styled.div`
     cursor: pointer;
   }
   button:hover {
-    background-color: #00a896;
+    background-color: #1d4567;
   }
 `;
 
@@ -203,7 +215,7 @@ export const ResultFormStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F8961E;
+  background-color: #323230;
   padding: 15px;
   color: #FFFFFF;
   min-width: 300px;
