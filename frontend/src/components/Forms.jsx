@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import desafioColetaContext from '../context/AppContext';
+import sendForm from '../services/request';
 import {
   ButtonGreen,
   ButtonRed,
@@ -8,10 +10,11 @@ import {
 } from '../styles/Forms';
 
 function Forms() {
+  const { setResult } = useContext(desafioColetaContext);
   const [form, setForm] = useState({
     pergunta1: '',
     pergunta2: '',
-    pergunta3: '',
+    pergunta3: 'Sim',
     pergunta4: '',
   });
 
@@ -21,6 +24,16 @@ function Forms() {
       ...form,
       [name]: value,
     });
+  };
+
+  const handleSubmit = async () => {
+    if (form.pergunta4.length < 15 || form.pergunta4.length > 200) {
+      global.alert('Pergunta 4 minimo 15 caracteres e maximo 200');
+    }
+    const response = await sendForm(form);
+    if (!response.error) {
+      setResult(response);
+    }
   };
 
   return (
@@ -89,16 +102,17 @@ function Forms() {
       </div>
       <div>
         <h3>4 - Por favor, justifique a resposta anterior</h3>
-        <div
-          name="pergunta4"
-          value={form.pergunta4}
-          onChange={(event) => handleForm(event)}
-        >
-          <textarea />
+        <div>
+          <textarea
+            name="pergunta4"
+            value={form.pergunta4}
+            onChange={(event) => handleForm(event)}
+          />
         </div>
         <ButtonGreen>
           <button
             type="button"
+            onClick={handleSubmit}
           >
             Submit
           </button>

@@ -3,6 +3,10 @@ import desafioColetaContext from '../context/AppContext';
 
 function ResultForm() {
   const { result } = useContext(desafioColetaContext);
+
+  if (result === false) {
+    return ('');
+  }
   const {
     quantidadePositiva,
     quantidadeNegativa,
