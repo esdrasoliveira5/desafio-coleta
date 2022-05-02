@@ -145,7 +145,7 @@ export const ButtonStyled = styled.div`
 }
 
 .button input[type="radio"]:checked + label {
-  background: #20b8be;
+  background: #02c39a;
   border-radius: 4px;
 }
 
@@ -156,6 +156,44 @@ export const ButtonStyled = styled.div`
 }
 `;
 
-export const Button2 = styled.div`
+export const ButtonRed = styled.div`
+  button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    outline: 0;
+    background: #e5383b;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+  cursor: pointer;
+  }
+  button:hover {
+    background-color: #ba181b;
+  }
+`;
 
+export const ButtonGreen = styled.div`
+  button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    outline: 0;
+    background: #02c39a;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #00a896;
+  }
 `;
