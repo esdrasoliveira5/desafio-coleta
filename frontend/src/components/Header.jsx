@@ -1,10 +1,11 @@
 import React from 'react';
+import { HeaderStyled } from '../styles/Forms';
 
 function Header() {
   return (
-    <header>
+    <HeaderStyled>
       HEADER
-    </header>
+    </HeaderStyled>
   );
 }
 

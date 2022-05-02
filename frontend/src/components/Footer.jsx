@@ -1,10 +1,11 @@
 import React from 'react';
+import { FooterStyled } from '../styles/Forms';
 
 function Footer() {
   return (
-    <footer>
-      Footer
-    </footer>
+    <FooterStyled>
+      Create by Esdras Oliveira
+    </FooterStyled>
   );
 }
 
