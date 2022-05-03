@@ -58,6 +58,7 @@ export const FooterStyled = styled.footer`
 `;
 
 export const FormStyled = styled.form`
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   background-color: rgba(29, 29, 27, 0.9);
@@ -116,10 +117,10 @@ export const FormStyled = styled.form`
   }
 
   @media screen and (min-width: 700px) {
-    width: 80%;
+    width: 60%;
   }
   @media screen and (min-width: 1100px) {
-    width: 50%;
+    width: 40%;
   }
 `;
 
@@ -220,12 +221,13 @@ export const ResultFormStyled = styled.div`
   color: #FFFFFF;
   min-width: 300px;
   width: 100%;
+  margin-bottom: 150px;
 
   @media screen and (min-width: 700px) {
-    width: 80%;
+    width: 60%;
   }
   @media screen and (min-width: 1100px) {
-    width: 50%;
+    width: 40%;
   }
   div {
     display: flex;
