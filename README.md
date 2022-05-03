@@ -55,5 +55,10 @@ Na minha opinião foi um desafio bem fácil de se fazer e não tive nenhuma difi
   ```sh
     sudo docker-compose up
 
+- Acesse a pagina pelo endereço:
+
+  ```sh
+    http://localhost:3000/
+
 <br/>
 
