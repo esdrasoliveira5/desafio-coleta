@@ -11,8 +11,8 @@
 
 ## Descrição
 
-**Objetivo**: Neste projeto foi desenvolvido uma aplicação completa com frontend em javascript e React.js, um backend em typescript com node.js e Express. Essa aplicação salva e analisar dados de resposta de um formulario.
-Na minha opinião foi um desafio bem fácil de se fazer e não tive nenhuma dificuldade, acho que poderia ter mais alguns objetivos como a criação de um usuário e validações de login  em conjunto com a utilização de um banco de dados. Mas foi um projeto divertido de se fazer.
+**Objetivo**: Neste projeto foi desenvolvido uma aplicação completa com frontend em javascript e React.js, um backend em typescript com node.js e Express. Essa aplicação salva e analisa dados de resposta de um formulario.
+Na minha opinião foi um desafio bem fácil de se fazer e não tive nenhuma dificuldade, acho que poderia ter mais alguns objetivos como a criação de um usuário e validações de login  em conjunto com a utilização de um banco de dados. Mas foi um projeto bem divertido de se fazer.
 
 
 - React;
